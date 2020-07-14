@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <!-- This script loads the Appian Web components; change it to your Appian server's domain -->
-    <script src="https://ps-sandbox1.appiancloud.com/suite/tempo/ui/sail-client/embeddedBootstrap.nocache.js" id="appianEmbedded"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Falling Rocks</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/FallingRocksWebBuild.json", {onProgress: UnityProgress});
+    </script>
   </head>
   <body>
-    <!-- This custom HTML element specifies an Appian report to embed on the HTML page -->
-    <appian-report reportUrlStub="tDAqBw"></appian-report>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Falling Rocks</div>
+      </div>
+    </div>
   </body>
 </html>
